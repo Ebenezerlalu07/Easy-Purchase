@@ -24,3 +24,114 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* =========================================
+   GLOBAL SMOOTH SCROLL
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for supported browsers */
+* {
+  box-sizing: border-box;
+}
+
+/* Optional premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8c8c8c;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b5b5b5 #f1f1f1;
+}
+
+/* Prevent smooth animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+#siteHeader {
+  will-change: transform;
+}
+
+#mainNavbar {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.nav-link {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.active1 {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-12px);
+  pointer-events: none;
+
+  transition:
+    max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease,
+    transform 0.35s ease;
+}
+
+#mobileMenu.active {
+  max-height: 650px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
