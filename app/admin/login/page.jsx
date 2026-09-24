@@ -521,28 +521,28 @@ export default function AdminLoginPage() {
 
                                 {/* Submit */}
 
-                                <button
-                                    type="submit"
+                                <Link
+                                    href="/admin/dashboard"
                                     className="
-                    group
-                    flex
-                    h-[62px]
-                    w-full
-                    items-center
-                    justify-between
-                    rounded-full
-                    bg-[#101411]
-                    pl-7
-                    pr-2
-                    text-[12px]
-                    font-bold
-                    text-white
-                    shadow-[0_18px_45px_rgba(16,20,17,.18)]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-0.5
-                    hover:bg-[#1A201C]
-                  "
+    group
+    flex
+    h-[62px]
+    w-full
+    items-center
+    justify-between
+    rounded-full
+    bg-[#101411]
+    pl-7
+    pr-2
+    text-[12px]
+    font-bold
+    text-white
+    shadow-[0_18px_45px_rgba(16,20,17,.18)]
+    transition-all
+    duration-300
+    hover:-translate-y-0.5
+    hover:bg-[#1A201C]
+  "
                                 >
                                     <span>
                                         Enter Dashboard
@@ -550,22 +550,22 @@ export default function AdminLoginPage() {
 
                                     <span
                                         className="
-                      flex
-                      h-12
-                      w-12
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-[#D8FF65]
-                      text-[#101411]
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                    "
+      flex
+      h-12
+      w-12
+      items-center
+      justify-center
+      rounded-full
+      bg-[#D8FF65]
+      text-[#101411]
+      transition-transform
+      duration-300
+      group-hover:translate-x-1
+    "
                                     >
                                         <ArrowRight className="h-4 w-4" />
                                     </span>
-                                </button>
+                                </Link>
                             </form>
 
                             {/* Security */}
