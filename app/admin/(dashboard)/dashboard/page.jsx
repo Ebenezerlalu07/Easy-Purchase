@@ -166,7 +166,7 @@ export default function DashboardPage() {
             sm:text-[44px]
           "
                 >
-                    Dashboard
+                    Dashboard 1
                 </h1>
 
                 <p
