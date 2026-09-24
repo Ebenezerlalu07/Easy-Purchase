@@ -1475,7 +1475,7 @@ ${form.description || "No additional requirements provided."}
 
                         <p className="mt-3 text-[14px] leading-6 text-[#535A54]">
                             Complete the information below and
-                            submit your product requirement.
+                            submit your product requirement
                         </p>
 
                         <form
