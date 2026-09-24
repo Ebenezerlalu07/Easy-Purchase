@@ -1470,7 +1470,7 @@ ${form.description || "No additional requirements provided."}
                         </p>
 
                         <h2 className="mt-3 text-[34px] font-semibold tracking-[-0.045em] text-[#101411] md:text-[40px]">
-                            Project details
+                            Get a Quote
                         </h2>
 
                         <p className="mt-3 text-[14px] leading-6 text-[#535A54]">

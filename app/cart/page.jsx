@@ -193,7 +193,7 @@ export default function CartPage() {
                 mt-12
                 grid
                 gap-5
-                lg:grid-cols-[minmax(0,1fr)_390px]
+                xl:grid-cols-[minmax(0,1fr)_390px]
               "
                         >
                             <div className="h-[400px] rounded-[28px] bg-black/10" />
@@ -211,7 +211,7 @@ export default function CartPage() {
             <main
                 className="
         min-h-screen
-        overflow-hidden
+        overflow-x-hidden
         bg-[#F4F5EF]
         pb-20
         pt-28
@@ -312,11 +312,12 @@ export default function CartPage() {
                                     className="
                   mt-5
                   font-display
-                  text-[48px]
+                  text-[40px]
                   font-medium
                   leading-[0.95]
                   tracking-[-0.055em]
                   text-[#101411]
+                  min-[380px]:text-[44px]
                   sm:text-[58px]
                   md:text-[70px]
                   lg:text-[78px]
@@ -549,13 +550,16 @@ export default function CartPage() {
                             className="
               mx-auto
               grid
+              w-full
               max-w-[1450px]
               gap-6
-              px-5
-              md:px-10
-              lg:grid-cols-[minmax(0,1fr)_390px]
-              lg:items-start
-              lg:px-14
+              px-4
+              sm:px-5
+              md:px-8
+              lg:px-10
+              xl:grid-cols-[minmax(0,1fr)_390px]
+              xl:items-start
+              xl:px-14
             "
                         >
                             {/* =================================================
@@ -663,8 +667,10 @@ export default function CartPage() {
 
                             <aside
                                 className="
-                lg:sticky
-                lg:top-28
+                w-full
+                min-w-0
+                xl:sticky
+                xl:top-28
               "
                             >
                                 <div
@@ -1218,7 +1224,7 @@ ${form.description || "No additional requirements provided."}
 
     return (
         <div
-            className="fixed inset-0 z-[6000] overflow-y-auto bg-[#07100D]/80 p-3 backdrop-blur-md sm:p-5 md:p-8"
+            className="fixed inset-0 z-[6000] overflow-x-hidden overflow-y-auto bg-[#07100D]/80 p-2 backdrop-blur-md sm:p-4 md:p-6 lg:p-8"
             role="dialog"
             aria-modal="true"
             aria-label="Quotation request"
@@ -1230,7 +1236,7 @@ ${form.description || "No additional requirements provided."}
         >
 
             <div
-                className="mx-auto flex min-h-full max-w-[1050px] items-center justify-center"
+                className="mx-auto flex min-h-full w-full max-w-[1050px] items-start justify-center py-2 sm:py-4 lg:items-center lg:py-6"
                 onMouseDown={(event) => {
                     if (event.target === event.currentTarget) {
                         onClose();
@@ -1239,19 +1245,19 @@ ${form.description || "No additional requirements provided."}
             >
 
                 <div
-                    className="relative z-10 w-full rounded-[32px] bg-[#F4F5EF] shadow-[0_40px_120px_rgba(0,0,0,.28)] sm:rounded-[36px]"
+                    className="relative z-10 w-full min-w-0 rounded-[22px] bg-[#F4F5EF] shadow-[0_40px_120px_rgba(0,0,0,.28)] sm:rounded-[30px] lg:rounded-[36px]"
                     onMouseDown={(event) => event.stopPropagation()}
                 >
 
                     {/* Glow */}
 
-                    <div className="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#D8FF65]/10 blur-[120px]" />
+                    <div className="pointer-events-none absolute -right-24 -top-24 h-[260px] w-[260px] rounded-full bg-[#D8FF65]/10 blur-[100px] sm:-right-40 sm:-top-40 sm:h-[420px] sm:w-[420px] sm:blur-[120px]" />
 
-                    <div className="relative p-6 sm:p-9 md:p-10 lg:p-12">
+                    <div className="relative p-4 sm:p-6 md:p-8 lg:p-12">
 
                         {/* Header */}
 
-                        <div className="flex items-start justify-between gap-6">
+                        <div className="flex items-start justify-between gap-3 sm:gap-6">
 
                             <div>
 
@@ -1259,7 +1265,7 @@ ${form.description || "No additional requirements provided."}
                                     Project Enquiry
                                 </p>
 
-                                <h2 className="mt-4 text-[36px] font-semibold leading-none tracking-[-0.05em] text-[#101411] sm:text-[42px] md:text-[48px]">
+                                <h2 className="mt-3 text-[30px] font-semibold leading-none tracking-[-0.05em] text-[#101411] sm:mt-4 sm:text-[38px] md:text-[44px] lg:text-[48px]">
                                     Get a Quote
                                 </h2>
 
@@ -1321,7 +1327,7 @@ ${form.description || "No additional requirements provided."}
 
                                     </div>
 
-                                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                                    <div className="mt-4 grid min-w-0 gap-3 md:grid-cols-2">
 
                                         {cart.map(
                                             (item) => (
@@ -1330,7 +1336,7 @@ ${form.description || "No additional requirements provided."}
                                                     key={
                                                         item.id
                                                     }
-                                                    className="flex items-center gap-3 rounded-[16px] bg-[#F4F5EF] p-3"
+                                                    className="flex min-w-0 items-center gap-3 rounded-[16px] bg-[#F4F5EF] p-3"
                                                 >
 
                                                     <div className="h-14 w-14 shrink-0 overflow-hidden rounded-[12px] bg-[#E8EBE4]">
@@ -1398,7 +1404,7 @@ ${form.description || "No additional requirements provided."}
                             className="mt-9"
                         >
 
-                            <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
+                            <div className="grid min-w-0 gap-x-5 gap-y-6 lg:grid-cols-2">
 
                                 <QuoteField
                                     label="Company Name"
@@ -1532,7 +1538,7 @@ ${form.description || "No additional requirements provided."}
 
                                 {/* Delivery */}
 
-                                <div className="md:col-span-2">
+                                <div className="lg:col-span-2">
 
                                     <QuoteField
                                         label="Delivery Location"
@@ -1572,7 +1578,7 @@ ${form.description || "No additional requirements provided."}
 
                             {/* Footer */}
 
-                            <div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="mt-7 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
 
                                 <p className="max-w-md text-[11px] leading-5 text-[#737A74]">
 
@@ -1587,7 +1593,7 @@ ${form.description || "No additional requirements provided."}
 
                                 <button
                                     type="submit"
-                                    className="group flex h-[58px] w-full items-center justify-between gap-7 rounded-full bg-[#101411] pl-7 pr-2 text-[14px] font-semibold text-white transition hover:bg-[#1B211D] sm:w-auto"
+                                    className="group flex h-[58px] w-full items-center justify-between gap-7 rounded-full bg-[#101411] pl-7 pr-2 text-[14px] font-semibold text-white transition hover:bg-[#1B211D] lg:w-auto lg:min-w-[200px]"
                                 >
 
                                     Submit Quote
@@ -1773,7 +1779,7 @@ function PremiumQuoteDropdown({
 
                     </div>
 
-                    <div className="mt-2 max-h-[250px] space-y-1 overflow-y-auto">
+                    <div className="mt-2 max-h-[190px] space-y-1 overflow-y-auto sm:max-h-[220px] lg:max-h-[250px]">
 
                         {options.map(
                             (option) => {
@@ -1883,10 +1889,11 @@ function CartProduct({
             <div
                 className="
           flex
+          min-w-0
           flex-col
           gap-5
-          sm:flex-row
-          sm:items-center
+          md:flex-row
+          md:items-center
         "
             >
                 {/* =================================================
@@ -1901,8 +1908,9 @@ function CartProduct({
             overflow-hidden
             rounded-[20px]
             bg-[#EFF1EB]
-            sm:h-[130px]
-            sm:w-[130px]
+            sm:h-[220px]
+            md:h-[130px]
+            md:w-[130px]
           "
                 >
                     <img
