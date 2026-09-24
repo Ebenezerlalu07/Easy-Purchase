@@ -2330,7 +2330,7 @@ ${form.description || "No additional requirements provided."}
 
     return (
         <div
-            className="fixed inset-0 z-[6000] overflow-y-auto bg-[#07100D]/80 p-3 backdrop-blur-md sm:p-5 md:p-8"
+            className="fixed inset-0 z-[6000] overflow-x-hidden overflow-y-auto bg-[#07100D]/80 p-2 backdrop-blur-md sm:p-4 md:p-6 lg:p-8"
             role="dialog"
             aria-modal="true"
             aria-label="Quotation request"
@@ -2342,7 +2342,7 @@ ${form.description || "No additional requirements provided."}
         >
 
             <div
-                className="mx-auto flex min-h-full max-w-[1050px] items-center justify-center"
+                className="mx-auto flex min-h-full w-full max-w-[1050px] items-start justify-center py-2 sm:py-4 lg:items-center lg:py-6"
                 onMouseDown={(event) => {
                     if (event.target === event.currentTarget) {
                         onClose();
@@ -2351,34 +2351,34 @@ ${form.description || "No additional requirements provided."}
             >
 
                 <div
-                    className="relative z-10 w-full rounded-[32px] bg-[#F4F5EF] shadow-[0_40px_120px_rgba(0,0,0,.28)] sm:rounded-[36px]"
+                    className="relative z-10 w-full min-w-0 overflow-x-clip rounded-[22px] bg-[#F4F5EF] shadow-[0_40px_120px_rgba(0,0,0,.28)] sm:rounded-[30px] lg:rounded-[36px]"
                     onMouseDown={(event) => event.stopPropagation()}
                 >
 
                     {/* Glow */}
 
-                    <div className="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#D8FF65]/10 blur-[120px]" />
+                    <div className="pointer-events-none absolute -right-24 -top-24 h-[260px] w-[260px] rounded-full bg-[#D8FF65]/10 blur-[90px] sm:-right-40 sm:-top-40 sm:h-[420px] sm:w-[420px] sm:blur-[120px]" />
 
-                    <div className="relative p-6 sm:p-9 md:p-10 lg:p-12">
+                    <div className="relative p-4 sm:p-6 md:p-8 lg:p-12">
 
                         {/* Header */}
 
-                        <div className="flex items-start justify-between gap-6">
+                        <div className="flex items-start justify-between gap-3 sm:gap-6">
 
-                            <div>
+                            <div className="min-w-0 flex-1">
 
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#727972] sm:text-[11px]">
+                                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#727972] sm:text-[11px] sm:tracking-[0.22em]">
                                     Project Enquiry
                                 </p>
 
-                                <h2 className="mt-4 text-[36px] font-semibold leading-none tracking-[-0.05em] text-[#101411] sm:text-[42px] md:text-[48px]">
+                                <h2 className="mt-3 text-[30px] font-semibold leading-none tracking-[-0.05em] text-[#101411] sm:mt-4 sm:text-[38px] md:text-[44px] lg:text-[48px]">
                                     Get a Quote
                                 </h2>
 
                                 {cart.length >
                                     0 && (
 
-                                        <p className="mt-4 text-[14px] leading-6 text-[#626963]">
+                                        <p className="mt-3 max-w-[620px] text-[12px] leading-5 text-[#626963] sm:mt-4 sm:text-[14px] sm:leading-6">
 
                                             {cart.length ===
                                                 1
@@ -2395,7 +2395,7 @@ ${form.description || "No additional requirements provided."}
                                 type="button"
                                 aria-label="Close quotation request"
                                 onClick={onClose}
-                                className="relative z-30 flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white text-[#101411] shadow-[0_8px_25px_rgba(0,0,0,.08)] transition hover:bg-[#101411] hover:text-white focus:outline-none focus:ring-4 focus:ring-[#D8FF65]/30 sm:h-12 sm:w-12"
+                                className="relative z-30 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white text-[#101411] shadow-[0_8px_25px_rgba(0,0,0,.08)] transition hover:bg-[#101411] hover:text-white focus:outline-none focus:ring-4 focus:ring-[#D8FF65]/30 sm:h-12 sm:w-12"
                             >
 
                                 <X className="pointer-events-none h-4 w-4" />
@@ -2411,9 +2411,9 @@ ${form.description || "No additional requirements provided."}
                         {cart.length >
                             0 && (
 
-                                <div className="mt-8 rounded-[22px] border border-black/[0.07] bg-white p-4 sm:p-5">
+                                <div className="mt-6 min-w-0 rounded-[18px] border border-black/[0.07] bg-white p-3 sm:mt-8 sm:rounded-[22px] sm:p-5">
 
-                                    <div className="flex items-center justify-between gap-4">
+                                    <div className="flex min-w-0 items-start justify-between gap-3 sm:items-center sm:gap-4">
 
                                         <div>
 
@@ -2421,7 +2421,7 @@ ${form.description || "No additional requirements provided."}
                                                 Selected Products
                                             </p>
 
-                                            <p className="mt-1 text-[13px] font-medium text-[#454B45]">
+                                            <p className="mt-1 text-[11px] font-medium leading-5 text-[#454B45] sm:text-[13px]">
                                                 Automatically added from your cart
                                             </p>
 
@@ -2433,7 +2433,7 @@ ${form.description || "No additional requirements provided."}
 
                                     </div>
 
-                                    <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                                    <div className="mt-4 grid min-w-0 gap-3 md:grid-cols-2">
 
                                         {cart.map(
                                             (item) => (
@@ -2442,10 +2442,10 @@ ${form.description || "No additional requirements provided."}
                                                     key={
                                                         item.id
                                                     }
-                                                    className="flex items-center gap-3 rounded-[16px] bg-[#F4F5EF] p-3"
+                                                    className="flex min-w-0 items-center gap-3 rounded-[14px] bg-[#F4F5EF] p-2.5 sm:rounded-[16px] sm:p-3"
                                                 >
 
-                                                    <div className="h-14 w-14 shrink-0 overflow-hidden rounded-[12px] bg-[#E8EBE4]">
+                                                    <div className="h-12 w-12 shrink-0 overflow-hidden rounded-[10px] bg-[#E8EBE4] sm:h-14 sm:w-14 sm:rounded-[12px]">
 
                                                         <img
                                                             src={
@@ -2461,13 +2461,13 @@ ${form.description || "No additional requirements provided."}
 
                                                     <div className="min-w-0 flex-1">
 
-                                                        <p className="truncate text-[13px] font-semibold text-[#101411]">
+                                                        <p className="truncate text-[12px] font-semibold text-[#101411] sm:text-[13px]">
                                                             {
                                                                 item.name
                                                             }
                                                         </p>
 
-                                                        <p className="mt-1 text-[10px] font-medium text-[#656C66]">
+                                                        <p className="mt-1 truncate text-[9px] font-medium text-[#656C66] sm:text-[10px]">
 
                                                             {
                                                                 item.brand
@@ -2507,10 +2507,10 @@ ${form.description || "No additional requirements provided."}
 
                         <form
                             onSubmit={submit}
-                            className="mt-9"
+                            className="mt-7 sm:mt-9"
                         >
 
-                            <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
+                            <div className="grid min-w-0 gap-x-5 gap-y-5 lg:grid-cols-2 lg:gap-y-6">
 
                                 <QuoteField
                                     label="Company Name"
@@ -2644,7 +2644,7 @@ ${form.description || "No additional requirements provided."}
 
                                 {/* Delivery */}
 
-                                <div className="md:col-span-2">
+                                <div className="lg:col-span-2">
 
                                     <QuoteField
                                         label="Delivery Location"
@@ -2663,7 +2663,7 @@ ${form.description || "No additional requirements provided."}
 
                             {/* Description */}
 
-                            <div className="mt-6">
+                            <div className="mt-5 sm:mt-6">
 
                                 <label className="mb-2.5 block text-[11px] font-semibold text-[#686F69]">
                                     Description / Requirement
@@ -2677,14 +2677,14 @@ ${form.description || "No additional requirements provided."}
                                     }
                                     onChange={update}
                                     placeholder="Product specifications and requirements..."
-                                    className="w-full resize-none rounded-[18px] border border-black/[0.10] bg-white p-5 text-[14px] leading-7 text-[#202521] outline-none transition-all placeholder:text-black/30 hover:border-black/20 focus:border-[#101411]/30 focus:ring-4 focus:ring-[#D8FF65]/20"
+                                    className="min-h-[150px] w-full min-w-0 resize-y rounded-[16px] border border-black/[0.10] bg-white p-4 text-[14px] leading-6 text-[#202521] outline-none transition-all placeholder:text-black/30 hover:border-black/20 focus:border-[#101411]/30 focus:ring-4 focus:ring-[#D8FF65]/20 sm:min-h-[170px] sm:rounded-[18px] sm:p-5 sm:leading-7"
                                 />
 
                             </div>
 
                             {/* Footer */}
 
-                            <div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                            <div className="mt-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
 
                                 <p className="max-w-md text-[11px] leading-5 text-[#737A74]">
 
@@ -2699,7 +2699,7 @@ ${form.description || "No additional requirements provided."}
 
                                 <button
                                     type="submit"
-                                    className="group flex h-[58px] w-full items-center justify-between gap-7 rounded-full bg-[#101411] pl-7 pr-2 text-[14px] font-semibold text-white transition hover:bg-[#1B211D] sm:w-auto"
+                                    className="group flex h-[56px] w-full items-center justify-between gap-5 rounded-full bg-[#101411] pl-6 pr-2 text-[13px] font-semibold text-white transition hover:bg-[#1B211D] sm:h-[58px] sm:gap-7 sm:pl-7 sm:text-[14px] lg:w-auto lg:min-w-[205px]"
                                 >
 
                                     Submit Quote
@@ -2740,7 +2740,7 @@ function QuoteField({
     required = false,
 }) {
     return (
-        <div>
+        <div className="min-w-0">
 
             <label className="mb-2.5 block text-[11px] font-semibold text-[#686F69]">
 
@@ -2761,7 +2761,7 @@ function QuoteField({
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
-                className="h-[58px] w-full rounded-[16px] border border-black/[0.10] bg-white px-4 text-[14px] font-medium text-[#202521] outline-none transition-all placeholder:text-black/30 hover:border-black/20 focus:border-[#101411]/30 focus:ring-4 focus:ring-[#D8FF65]/20"
+                className="h-[54px] w-full min-w-0 rounded-[14px] border border-black/[0.10] bg-white px-4 text-[14px] font-medium text-[#202521] outline-none transition-all placeholder:text-black/30 hover:border-black/20 focus:border-[#101411]/30 focus:ring-4 focus:ring-[#D8FF65]/20 sm:h-[58px] sm:rounded-[16px]"
             />
 
         </div>
@@ -2783,7 +2783,7 @@ function PremiumQuoteDropdown({
         useState(false);
 
     return (
-        <div className="relative z-[60]">
+        <div className="relative z-[60] min-w-0">
 
             {/* Label */}
 
@@ -2803,13 +2803,16 @@ function PremiumQuoteDropdown({
                 className={`
           group
           flex
-          h-[58px]
+          h-[54px]
           w-full
+          min-w-0
           items-center
           justify-between
           gap-4
-          rounded-[16px]
+          rounded-[14px]
           border
+          sm:h-[58px]
+          sm:rounded-[16px]
           bg-white
           pl-4
           pr-2.5
@@ -2873,7 +2876,7 @@ function PremiumQuoteDropdown({
 
             {open && (
 
-                <div className="absolute left-0 right-0 top-[calc(100%+10px)] z-[500] overflow-hidden rounded-[20px] border border-black/[0.08] bg-white p-2 shadow-[0_25px_70px_rgba(0,0,0,.16)]">
+                <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-[500] min-w-0 overflow-hidden rounded-[16px] border border-black/[0.08] bg-white p-2 shadow-[0_25px_70px_rgba(0,0,0,.16)] sm:top-[calc(100%+10px)] sm:rounded-[20px]">
 
                     <div className="border-b border-black/[0.06] px-3 pb-2 pt-1">
 
@@ -2885,7 +2888,7 @@ function PremiumQuoteDropdown({
 
                     </div>
 
-                    <div className="mt-2 max-h-[250px] space-y-1 overflow-y-auto">
+                    <div className="mt-2 max-h-[190px] space-y-1 overflow-y-auto overscroll-contain sm:max-h-[220px] lg:max-h-[250px]">
 
                         {options.map(
                             (option) => {
