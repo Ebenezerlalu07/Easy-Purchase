@@ -51,7 +51,7 @@ const navigation = [
         links: [
             {
                 name: "Products",
-                href: "/admin/products",
+                href: "/admin/products/new",
                 icon: PackageSearch,
             },
             {
